@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(  60deg ,#160417 , #3d044e );
+  background-repeat: no-repeat;
+  /* backdrop-filter: blur(30px); */
+
+}
+
+main {
+  height: 200px;
+  min-width: 400px;
+  margin: 5% auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: #fdfeff1a;
+  backdrop-filter: blur(50px);
+  color: #fff;
+}
+
+ main .header {
+  width: 100%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+ .search input {
+  max-width: 300px;
+  min-width: 280px;
+  padding: 12px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 1px solid gray;
+  background: #ffffff35;
+  outline: none;
+  color: #fff;
+}
+.search input::placeholder {
+  color: #fff;
+  font-weight: 500;
+
+}
+.header button {
+  padding: 12px 20px;
+  margin-left: -5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid gray;
+  background: linear-gradient(  60deg ,#43d0ff , #025978 );
+  cursor: pointer;
+  color: #fff;
+}
+.header h2 {
+  font-weight: lighter;
+  text-align: center;
+  margin: 15px 10px;
+  font-size: 1.8rem;
+  color: transparent;
+  -webkit-text-stroke: 2px #3da7ca;
+  letter-spacing: 3px;
+  position: relative;
+}
+
+.header h2::before {
+  content:  'Weather App';
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  overflow: hidden;
+  color: darkmagenta;
+  transition: 1s ease-in-out;
+}
+.header h2:hover::before {
+  width: 100%;
+  filter: drop-shadow(0 0 25px  darkmagenta);
+}
+
+/* content section */
+
+.content {
+ display: none;
+
+}
+.content .cards {
+  margin-top: 10%;
+}
+.content .cards .card {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   gap: 80px;
+  margin-bottom: 10%;
+}
+
+.cards .card .left-sec .city {
+  font-size: 1.1rem;
+}
+.cards .card .right-sec .time {
+  font-size: 1rem;
+  color:#ffffffa2;
+}
+
+/* weaather section */
+.cards .card .left-sec img {
+  width: 130px;
+}
+.cards .card .right-sec .degree {
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+.cards .card .right-sec .condition {
+  color:#ffffffa2;
+
+}
+/* air quality section */
+
+.card .right-sec .air,
+.card .left-sec .air {
+   font-size: 1.1rem;
+   color:#ffffffa2;
+}
+.card .left-sec i,
+.card .right-sec i {
+   
+  font-size:2rem;
+  height: 50px;
+  margin-right: 4px;
+  /* color: #43d0ff; */
+  background: linear-gradient(  60deg ,#43d0ff , #0e7aa1 );
+  background-clip: text;
+   color: transparent;
+
+}
+
+.card .right-sec .perc,
+.card .left-sec .perc {
+  font-weight: 700;
+  font-size: 1.1rem;
+   text-align: center;
+   margin: -5px 5px;
+}
+
+
+/* error */
+.not-found {
+  width: 350px;
+  position: absolute;
+  top: 3%;
+  bottom: 0;
+  left: 5%;
+  box-shadow: 0 2px 10px rgba(50, 46, 46, 0.277) inset;
+  border-radius: 5px;
+  display: none;
+  height: fit-content;
+}
+.not-found p {
+  text-align: center;
+  margin-top: -3px;
+  font-size: 1.1rem;
+}
+.not-found img {
+  width: 350px;
+  object-fit: contain;
+}
+
+.not-found.active,
+.content.active {
+  visibility: visible;
+  display: block;
+}
+
+.content-controller {
+  height: 100px;
+  transition:  height .6s ease;
+  position: relative;
+}
+
+
+@media (max-width: 450px) {
+  main {
+    min-width: 330px;
+  }
+
+}
